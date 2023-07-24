@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Student Form - BeDay </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/buGcYd8rfuksUSRr/',
+                type: 'post',
+                data: $("#myForm").serializeArray(),
+                success: function () {
+                    alert("Form Data Submitted :)")
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+</head>
+
+<body class="form-background">
+    <header class="sticky-header">
+        <nav class="sticky-navbar">
+            <a href="index.html" class="sticky-nav-logo">BeDay.</a>
+            <div class="btn-section"><a href="https://koalendar.com/e/beday-consultation" class="primary-btn"> Free
+                    Consultation
+                </a></div>
+        </nav>
+    </header>
+
+    <section class="form-container">
+
+        <form class="general-form" id="myForm">
+            <h3 class="title form-header"> Student Information Form </h3>
+            <p class="confidential">Your trust means everything to us. By filling out the below form, we guarantee the
+                utmost confidentiality
+                and security.
+                These details enable us to effectively prepare and enhance your classroom experience.</p>
+            <div class="personal-info">
+                <label for="firstname">Full Name *</label>
+                <input id="firstname" type="text" name="firstname" placeholder="John Doe" required />
+            </div>
+            <div class="personal-info">
+                <label for="course">Lesson Subject *</label>
+                <select name="course" id="course" required>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html"> HTML & CSS </option>
+                    <option value="roblox">Roblox & Lua</option>
+                    <option value="scratch">Scratch</option>
+                    <option value="ux">Foundations of UX Design</option>
+                </select>
+            </div>
+            <div class="personal-info">
+                <label for="email">Contact E-mail *</label>
+                <input id="email" type="email" name="email" placeholder="johndoe@example.com" required />
+                <p id="validationMessage"></p>
+            </div>
+            <div class="personal-info">
+                <label for="age">Age *</label>
+                <input id="age" type="text" name="age" required />
+                <p id="ageMessage"></p>
+            </div>
+
+            <div class="personal-info">
+                <label for="gender">Gender</label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="nonbinary"> Non-binary </option>
+                    <option value="noanswer"> Prefer not to answer </option>
+                </select>
+            </div>
+
+            <div class="personal-info">
+                <label for="tookbefore"> Have you ever taken or worked with this subject before </label>
+                <select name="tookbefore" id="tookbefore" onchange="getValue()" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="projects" id="projects">
+                <label for="projects">What types of projects you worked on? </label>
+                <textarea id="projects" type="text" name="projects"
+                    placeholder="Explain type of the projects related to this subject" required></textarea>
+            </div>
+
+            <div class="message">
+                <label for="message">Please briefly explain why you're taking this lesson </label>
+                <textarea id="message" type="text" name="message"
+                    placeholder="Explain your goals and expectations from class"></textarea>
+            </div>
+            <div class="btn-section"><a href="#" class="primary-btn" onclick="runAll()"> Continue
+                    to Payment </a></div>
+        </form>
+
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

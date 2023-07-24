@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> JavaScript - BeDay </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="Dt0u4qBQ4VClGGUTWwwX41I3rI5oXJzn0vBs0GH1glQ" />
+
+</head>
+
+
+<body>
+    <header class="sticky-header">
+        <nav class="sticky-navbar">
+            <a href="index.html" class="sticky-nav-logo">BeDay.</a>
+            <div class="btn-section"><a href="https://koalendar.com/e/beday-consultation" class="primary-btn"> Free
+                    Consultation </a></div>
+        </nav>
+    </header>
+
+
+
+    <section>
+        <img class="course-img" src="img/js-2.png">
+    </section>
+
+    <section class="overview-title">
+        <h1 class="title">JAVASCRIPT PROGRAMMING</h1>
+    </section>
+
+    <section class="info">
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Scroll to Top">&#8593;</button>
+        <div class="overview-new">
+            <p class="paragraph-new"><span class="overview-title-2">Price: </span><br>
+                <span class="areas"> $42 USD </span></p>
+            <p class="paragraph-new"><span class="overview-title-2">Areas: </span><br>
+                <span class="areas"> Web Development &#x2022; Software Development </span> </p>
+            <br>
+            <p class="paragraph-new"><span class="overview-title-2">Duration & Setting: </span><br>
+                <span class="areas"> 1 Hour Private Lesson </span></p>
+            <br>
+            <p class="paragraph-new"><span class="overview-title-2">Age range:</span> <br>
+                <span class="areas"> 7 - 15 Y/O </span></p>
+            <p class="paragraph-new"><span class="overview-title-2">Skill level:</span> <br>
+                <span class="areas"> Beginner to advance </span></p>
+            <div class="btn-section"><a id="info-btn" href="form.html" class="primary-btn"> Schedule Lesson </a></div>
+
+        </div>
+
+        <div class="info-paragraph-course">
+            <div class="about-course">
+                <h2 class="headline2"> About this course </h2>
+                <p class="class-descr"> JavaScript is a popular programming language used primarily for web
+                    development. It is a versatile language that is used to create interactive web pages,
+                    web applications, and even mobile applications. With JavaScript, developers can create
+                    dynamic and responsive web content that can interact with users and respond to their actions.<br>
+
+                    JavaScript is a client-side scripting language, which means that it runs on the user's device
+                    rather than on the server. This allows developers to create interactive web pages that can
+                    be updated and modified without reloading the entire page. <br>
+
+                    JavaScript is a relatively easy language to learn, with a simple syntax and a vast
+                    array of resources available online. Students who learn JavaScript can gain valuable
+                    skills that can lead to careers in web development, app development, and software engineering.
+                    With its popularity and versatility, JavaScript is a valuable language to learn for anyone
+                    interested in the tech industry.
+
+                </p>
+            </div>
+
+            <div class="learn-course">
+                <h2 class="headline2"> What you'll learn </h2>
+                <p class="class-descr"> The exact content of a JavaScript programming class will
+                    depend on the level of the class and the specific goals of the learners but generally we will learn:
+                    <br>
+                    <br>
+                    &#x2022; Basic programming concepts such as variables, data types, control structures, functions,
+                    and
+                    modules <br>
+                    <br>
+                    &#x2022; Debugging and error handling techniques <br><br>
+                    &#x2022; Using Python libraries for specific applications such as web scraping, data analysis,
+                    machine learning, and game development<br><br>
+                    &#x2022; Introduction to data structures and algorithms in Python<br>
+
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="suggestion">
+        <h3 class="title"> You might also like </h3>
+    </section>
+
+    <section class="carousel-tabs-container-courses">
+        <div></div>
+        <div class="slider-btn">
+            <a class="left-btn inactive" id="prev"> &#8592; </a>
+            <a class="right-btn tab-active" id="next"> &#8594; </a>
+        </div>
+    </section>
+    <section class="carousel-card-container">
+
+        <div class="carousel-card coding" id="coding">
+            <!-- <p class="card-price"> $55 (1 Hour)</p> -->
+            <img class="card-img" src="img/python.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Python Programming </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Data Science &#x2022; Machine Learning </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="python.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+
+        <div class="carousel-card coding web" id="coding">
+            <!-- <p class="card-price">$42 (1 Hour)</p> -->
+            <img class="card-img" src="img/html.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> HTML & CSS </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Web Development </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="html_css.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+
+        <div class="carousel-card game" id="game">
+            <!-- <p class="card-price"> $52 (1 Hour)</p> -->
+            <img class="card-img" src="img/roblox.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Roblox & Lua </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Game Development &#x2022; Game Design </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="roblox.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+        <div class="carousel-card coding game" id="coding">
+            <!-- <p class="card-price"> $48 (1 Hour)</p> -->
+            <img class="card-img" src="img/scratch.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Scratch </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Visual Coding &#x2022; Game Development </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="scratch.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+        <div class="carousel-card design" id="design">
+            <!-- <p class="card-price"> $65 (1 Hour)</p> -->
+            <img class="card-img" src="img/UX.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Foundations of UX Design </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Design &#x2022; Problem Solving </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="ux.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- <div class="footer-logo">
+                <img class="footer-img" src="img/footer-logo-2.svg">
+            </div> -->
+            <div class="footer-logo">
+                <a href="index.html" class="animated fadeIn nav-logo">BeDay.</a>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Contact us </h4>
+                <p class="phone"><img src="img/phone-logo.svg"> TBA </p>
+                <a href="mailto:info@beday.me" class="email"><img src="img/email-logo.svg">
+                    info@beday.me
+                </a>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Social Links </h4>
+                <p class="phone"><a href="https://www.instagram.com/bedaylearn/"><img class="insta"
+                            src="img/insta-icon.svg"></a><a href="https://www.linkedin.com/company/beday/"> <img
+                            class="linkedin" src="img/linkedin-icon.svg"></a></p>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Useful Links </h4>
+                <p class="phone"><a href="policies.html"> Lesson Setup & Policies</a> </p>
+            </div>
+
+            <!-- <div class="social-info">
+                <div>
+                    <h4> Contact us </h4>
+                </div>
+                <div class="icons">
+                    <img class="instagram" src="img/insta-icon.svg">
+                    <img class="linkedin" src="img/linkedin-icon.svg">
+                </div>
+            </div> -->
+        </div>
+
+    </footer>
+    <script src="main.js"></script>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
