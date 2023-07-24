@@ -2,47 +2,427 @@
 <html>
 
 <head>
+    <title> BeDay - Homepage </title>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> We'll be back! </title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="google-site-verification" content="Dt0u4qBQ4VClGGUTWwwX41I3rI5oXJzn0vBs0GH1glQ" />
 </head>
 
 <body>
+
     <header class="header">
         <nav class="navbar">
-            <a href="#" class="nav-logo nav-text">BeDay.</a>
+            <a href="#" class="animated fadeIn nav-logo">BeDay.</a>
+            <ul class="nav-menu">
+
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li> -->
+
+                <li class="nav-item">
+                    <a href="#courses-section" class="animated fadeIn nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#instructor-section" class="animated fadeIn nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about-section" class="animated fadeIn nav-link">Why BeDay</a>
+                </li>
+                <div class="btn-section nav-btn"><a href="https://koalendar.com/e/beday-consultation" target="_blank"
+                        class="primary-btn">
+                        Free Consultation
+                    </a></div>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
-    <section class="box-container">
-        <div class="shadow-container">
-            <img class="image" src="img/error.png">
-            <div class="shadow"></div>
+
+    <section class="hero">
+        <button class="scroll-top" onclick="scrollToTop()" id="scrollToTopBtn" title="Scroll to Top">&#8593;</button>
+
+        <div class="hero-text">
+            <h1 class="hero-heading-1"> Be your own <span class="underline">hero!<span> </h1>
+            <h2 class="hero-heading-2"> Unlock the Limitless Power of Technology: Learn to Code, Design,
+                Create Fascinating Games & Websites -
+                All from the Comfort of Your Home!<span class="hashtag">#BeBetterEveryDay</span></h2>
+            <!-- <p class="hero-paragraph"> Live 1-on-1 online classes to kick-start or accelerate your knowledge in tech
+                subjects!
+            </p> -->
+            <div class="btn-section"><a href="#courses-section" class="primary-btn"> Explore Courses </a></div>
+        </div>
+        <div class="img-container">
+            <img class="hero-img1" src="img/hero-gif-anim.gif" id="gifImage">
+            <!-- <img src="img/idea.svg">
+            <img class="hero-img2" src="img/game.svg"> -->
         </div>
     </section>
 
-    <section class="back-txt">
-        <h4 class="loading-txt">Brace yourself for a content explosion! We'll be back soon!</h4>
-        <p class="loading-p"> if you have any questions please contact us at: <a class="loading-link"
-                href="mailto:info@beday.me">
-                info@beday.me</a> </p>
+    <section class="courses-txt" id="courses-section" loading="lazy">
+        <h3 class="title"> EXPLORE COURSES </h3>
+        <h2 class="description"> The most hyper-curated list of tech courses on earth. </h2>
+    </section>
+
+    <section class="carousel-tabs-container">
+        <div class="carousel-tabs">
+            <a class="tab-btn active" id="all-btn"> All </a>
+            <a class="tab-btn" id="coding-btn"> Coding </a>
+            <a class="tab-btn" id="game-btn"> Game Development </a>
+            <a class="tab-btn" id="web-btn"> Web Development </a>
+            <a class="tab-btn" id="design-btn"> Design </a>
+        </div>
+
+        <div class="slider-btn">
+            <a class="left-btn inactive" id="prev"> &#8592; </a>
+            <a class="right-btn tab-active" id="next"> &#8594; </a>
+        </div>
+    </section>
+
+    <section class="carousel-card-container">
+        <div class="carousel-card coding" id="coding">
+            <!-- <p class="card-price"> $50 (1 Hour)</p> -->
+            <img class="card-img" src="img/python.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Python Programming </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Data Science &#x2022; Machine Learning </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="python.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule
+                    Lesson </a>
+            </div>
+        </div>
+        <div class="carousel-card coding web" id="coding">
+            <!-- <p class="card-price"> $50 (1 Hour)</p> -->
+            <img class="card-img" src="img/js-2.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> JavaScript Programming </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Web Development &#x2022; Software Development </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="js.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule
+                    Lesson </a>
+            </div>
+        </div>
+        <div class="carousel-card coding web" id="coding">
+            <!-- <p class="card-price">$50 (1 Hour)</p> -->
+            <img class="card-img" src="img/html.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> HTML & CSS </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Web Development </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="html_css.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+
+        <div class="carousel-card game" id="game">
+            <!-- <p class="card-price"> $55 (1 Hour)</p> -->
+            <img class="card-img" src="img/roblox.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Roblox & Lua </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Game Development &#x2022; Game Design </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="roblox.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+        <div class="carousel-card coding game" id="coding">
+            <!-- <p class="card-price"> $50 (1 Hour)</p> -->
+            <img class="card-img" src="img/scratch.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Scratch </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Visual Coding &#x2022; Game Development </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="scratch.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+
+        <div class="carousel-card design" id="design">
+            <!-- <p class="card-price"> $50 (1 Hour)</p> -->
+            <img class="card-img" src="img/UX.png">
+            <div class="card-info">
+                <div>
+                    <h3 class="card-heading"> Foundations of UX Design </h3>
+                </div>
+                <div>
+                    <p class="card-paragraph"> Design &#x2022; Problem Solving </p>
+                </div>
+                <div>
+                    <p class="card-age"> Ages: 7 - 15 Y/O </p>
+                </div>
+            </div>
+            <div class="carousel-btn">
+                <a href="ux.html" class="secondary-btn"> Learn More </a>
+                <a href="form.html" target="_blank" class="primary-btn"> Schedule Lesson </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="instructor-txt" id="instructor-section">
+        <h3 class="title"> MEET THE INSTRUCTOR </h3>
+    </section>
+    <section class="instructor-info">
+        <div class="instructor-img">
+            <img src="img/instructor-image.svg">
+        </div>
+        <div class="instructor-description">
+            <div class="details">
+                <div class="education">
+                    <h4 class="info-header"> Education </h4>
+                    <p class="info-paragraph"> Computational Science, MSc </p>
+                    <p class="info-paragraph"> Information Technology, BSc </p>
+                </div>
+                <div class="social">
+                    <h4 class="info-header"> Social Links </h4>
+                    <p class="info-paragraph"> <a href="https://www.linkedin.com/in/saghibaraghani" class="link">
+                            LinkedIn <span class="dot">&#x2022;
+                                <!--<a href="#"
+                                    class="link">
+                                    Instagram</a>--></a> </p>
+                    <!-- <p class="info-paragraph">  </p> -->
+                </div>
+            </div>
+            <div class="description-paragraph">
+                <p>
+                    Hey there &#128075; <br>
+                    This is Saghi, a tech enthusiast and a seasoned professional with a passion for empowering young
+                    minds
+                    through the world of coding and design. As an experienced teacher, I
+                    thrive on helping young learners uncover the magic of technology and ignite their
+                    imaginations. 🚀 <br><br>
+
+                    With a track record of successfully teaching over 1500 students aged 7 to 19, I've honed my skills
+                    in making coding concepts fun, engaging, and easily understandable. <br><br>
+
+                    <!-- Whether it's Python, C++, HTML/CSS, or the exciting world of Roblox and Lua, I've got the teaching
+                    prowess and real-world experience to equip your children with the tech skills they need to thrive in
+                    the digital era.<br> -->
+
+                    But I'm not just an educator; I'm also a passionate freelance UX/UI Designer, crafting captivating
+                    digital experiences that blend creativity and functionality seamlessly.
+                </p>
+
+                <!-- <div class="background"></div> -->
+            </div>
+        </div>
     </section>
 
 
-    <!-- <script>
-        const text = "Brace yourself for a content explosion! We'll be back soon!";
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, 50);
-            }
-        }
-        type();
-    </script> -->
-</body>
+    <section class="quality-txt" id="about-section">
+        <h3 class="title"> WHY BeDay </h3>
+    </section>
+    <section class="beday-quality">
+        <div class="quality-card">
+            <div class="card-details">
+                <img class="services-img" src="img/private-gif.gif">
+                <h4 class="services-header"> Private 1-1 Lessons </h4>
+                <p class="slogan"> Unlock your potential with personalized private lessons tailored to your unique needs
+                </p>
+            </div>
+        </div>
 
+        <div class="quality-card">
+            <div class="card-details">
+                <img class="services-img-2" src="img/customize-gif.gif">
+                <h4 class="services-header"> Personalized Lesson Plans </h4>
+                <p class="slogan"> Your journey, your pace: Personalized lessons tailored just for you.
+                </p>
+            </div>
+        </div>
+
+        <div class="quality-card">
+            <div class="card-details">
+                <img class="services-img" src="img/support-gif.gif">
+                <h4 class="services-header"> High Support All the Way </h4>
+                <p class="slogan"> Round-the-clock support only for you: Empowering online learners
+                    with answers at every step!
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!-- <section class="class-info" id="about-section">
+        <div class="class-img hero-img1"><img src="img/classes.svg"> </div>
+        <div class="class-description">
+            <h2 class="class-heading2">
+                <span class="underline">Live 1-on-1 online classes </span> to kick-start or accelerate your knowledge in
+                tech subjects!
+            </h2>
+            <p class="description-paragraph">
+                Our one-on-one classes offer personalized attention and customized lesson plans to help you achieve your
+                tech learning goals.<br>
+                Whether you're a beginner or an advanced learner, our classes provide a supportive and collaborative
+                environment where you can ask questions, explore new topics, and receive feedback and guidance from your
+                instructor.<br>
+                Throughout the class, you'll have the opportunity to practice your skills and apply what you've learned
+                in real-world scenarios, with your instructor on hand to provide guidance, feedback, and support.
+            </p>
+        </div>
+    </section> -->
+
+
+
+
+
+
+    <!-- <section class="contact-txt">
+        <h3 class="title gradient-effect"> I'D LOVE TO GET TO KNOW YOU </h3>
+        <h2 class="description"> Let's get in touch! &#128075;</h2>
+    </section>
+
+    <section class="contact-container">
+        <div classs="contact-img">
+            <img src="img/contact.svg">
+        </div>
+
+        <form class="contact-form">
+            <div class="social-contact"></div>
+            <div>
+                <p> Or send me a message </p>
+            </div>
+
+            <div class="personal-info">
+                <div class="fullname-container">
+                    <p class="form-p"> Your full name</p>
+                    <input type="text" id="name" placeholder="John Doe" class="input-box-name">
+                </div>
+                <div class="email-container">
+                    <p class="form-p"> Your email address </p>
+                    <input type="email" id="email" placeholder="johndoe@email.com" class="input-box-email">
+                </div>
+            </div>
+            <div class="message-container">
+                <p> Message </p>
+                <textarea id="message" rows="4" placeholder="Your message..." class="msg-box"> </textarea>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="submit-btn">Send Message</button>
+            </div>
+        </form>
+    </section> -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- <div class="footer-logo">
+                <img class="footer-img" src="img/footer-logo-2.svg">
+            </div> -->
+            <div class="footer-logo">
+                <a href="#" class="animated fadeIn nav-logo">BeDay.</a>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Contact us </h4>
+                <p class="phone"><img src="img/phone-logo.svg"> TBA </p>
+                <a href="mailto:info@beday.me" class="email"><img src="img/email-logo.svg">
+                    info@beday.me
+                </a>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Social Links </h4>
+                <p class="phone"><a href="https://www.instagram.com/bedaylearn/"><img class="insta"
+                            src="img/insta-icon.svg"></a><a href="https://www.linkedin.com/company/beday/"> <img
+                            class="linkedin" src="img/linkedin-icon.svg"></a></p>
+            </div>
+            <div class="contact-info">
+                <h4 class="contact-h4"> Useful Links </h4>
+                <p class="phone"><a href="policies.html"> Lesson Setup & Policies</a> </p>
+            </div>
+
+            <!-- <div class="social-info">
+                <div>
+                    <h4> Contact us </h4>
+                </div>
+                <div class="icons">
+                    <img class="instagram" src="img/insta-icon.svg">
+                    <img class="linkedin" src="img/linkedin-icon.svg">
+                </div>
+            </div> -->
+        </div>
+
+    </footer>
+
+    <!-- <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+
+    </script> -->
+    <!-- < script >
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.hp-nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script > -->
+
+
+    <script src="main.js"></script>
+
+
+</body>
 
 
 
