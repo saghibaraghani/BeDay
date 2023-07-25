@@ -2083,6 +2083,11 @@ h4 {
         display: none;
     }
 
+    .questions{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
     /* #sticky-button{
         display: block;
         margin-right: 70px;
