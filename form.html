@@ -5,24 +5,11 @@
     <title> Student Form - BeDay </title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    </link>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script>
-        function SubForm() {
-            $.ajax({
-                url: 'https://api.apispreadsheets.com/data/buGcYd8rfuksUSRr/',
-                type: 'post',
-                data: $("#myForm").serializeArray(),
-                success: function () {
-                    alert("Form Data Submitted :)")
-                },
-                error: function () {
-                    alert("There was an error :(")
-                }
-            });
-        }
-    </script>
 </head>
 
 <body class="form-background">
@@ -36,37 +23,23 @@
     </header>
 
     <section class="form-container">
-
         <form class="general-form" id="myForm">
             <h3 class="title form-header"> Student Information Form </h3>
             <p class="confidential">Your trust means everything to us. By filling out the below form, we guarantee the
                 utmost confidentiality
                 and security.
                 These details enable us to effectively prepare and enhance your classroom experience.</p>
+
+            <h3 class="form-heading-2"> Personal Information </h3>
             <div class="personal-info">
-                <label for="firstname">Full Name *</label>
+                <label for="firstname">Student Full Name *</label>
                 <input id="firstname" type="text" name="firstname" placeholder="John Doe" required />
             </div>
-            <div class="personal-info">
-                <label for="course">Lesson Subject *</label>
-                <select name="course" id="course" required>
-                    <option value="python">Python</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="html"> HTML & CSS </option>
-                    <option value="roblox">Roblox & Lua</option>
-                    <option value="scratch">Scratch</option>
-                    <option value="ux">Foundations of UX Design</option>
-                </select>
-            </div>
-            <div class="personal-info">
-                <label for="email">Contact E-mail *</label>
-                <input id="email" type="email" name="email" placeholder="johndoe@example.com" required />
-                <p id="validationMessage"></p>
-            </div>
+
             <div class="personal-info">
                 <label for="age">Age *</label>
                 <input id="age" type="text" name="age" required />
-                <p id="ageMessage"></p>
+                <p id="ageMessage" class="age-error"></p>
             </div>
 
             <div class="personal-info">
@@ -80,24 +53,103 @@
             </div>
 
             <div class="personal-info">
-                <label for="tookbefore"> Have you ever taken or worked with this subject before </label>
-                <select name="tookbefore" id="tookbefore" onchange="getValue()" required>
+                <label for="email">Contact E-mail *</label>
+                <input id="email" type="email" name="email" placeholder="johndoe@example.com" required />
+                <p id="validationMessage"></p>
+            </div>
+
+            <h3 class="form-heading-2"> Lesson Goals </h3>
+            <div class="personal-info">
+                <label for="course">Lesson Subject *</label>
+                <select name="course" id="course" required>
+                    <option value="" disabled selected>Select One </option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html"> HTML & CSS </option>
+                    <option value="roblox">Roblox & Lua</option>
+                    <option value="scratch">Scratch</option>
+                    <option value="ux">Foundations of UX Design</option>
+                </select>
+                <div id="error-message" style="color: red; font-size: 14px;"></div>
+            </div>
+
+
+            <label for="tookbefore"> Have you ever taken or worked with this subject before </label>
+            <div class="tookbefore-info">
+                <!--<select name="tookbefore" id="tookbefore" onchange="getValue()" required>
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
-                </select>
+                </select> -->
+                <div>
+                    <input type="radio" id="html" name="tookbefore" value="yes" class="checkbox-input-small"
+                        onclick="toggleSection(true)">
+                      <label for="tookbefore" class="checkbox-div-small">Yes</label><br>
+                </div>
+                <div>
+                      <input type="radio" id="css" name="tookbefore" value="no" class="checkbox-input-small"
+                        onclick="toggleSection(false)">
+                      <label for="tokbefore" class="checkbox-div-small">No</label><br>
+                </div>
+
             </div>
 
             <div class="projects" id="projects">
-                <label for="projects">What types of projects you worked on? </label>
-                <textarea id="projects" type="text" name="projects"
-                    placeholder="Explain type of the projects related to this subject" required></textarea>
+                <label class="message-label" for="projects">What types of projects you worked on? </label>
+                <textarea type="text" name="projects" placeholder="Explain type of the projects related to this subject"
+                    required></textarea>
             </div>
 
-            <div class="message">
-                <label for="message">Please briefly explain why you're taking this lesson </label>
+            <h3 class="form-heading-2"> Future Goals </h3>
+            <label class="message-label" for="why">Why you're taking this lesson?</label>
+            <div class="hobbies-interests">
+                <div>
+                    <input class="checkbox-input" type="radio" id="html" name="why" value="update">
+                      <label class="checkbox-div" for="why">Update existing skill</label>
+                </div>
+                <div>
+                      <input class="checkbox-input" type="radio" id="css" name="why" value="more">
+                      <label class="checkbox-div" for="why">Get more knowledge on the topic</label>
+                </div>
+                <div class="lower-row">
+                    <input class="checkbox-input" type="radio" id="css" name="why" value="scratch">
+                      <label class="checkbox-div" for="why">Learn from scratch</label>
+                </div>
+                <div class="lower-row">
+                    <input class="checkbox-input" type="radio" id="css" name="why" value="specific">
+                      <label class="checkbox-div" for="why">Work on a specific project</label>
+                </div>
+            </div>
+
+            <!-- <div class="message">
+                <label class="message-label" for="message">Are there specific projects or industries you are interested
+                    in pursuing with your
+                    coding and design skills? (Briefly explain) </label>
                 <textarea id="message" type="text" name="message"
                     placeholder="Explain your goals and expectations from class"></textarea>
+            </div> -->
+
+            <div class="message">
+                <label class="message-label" for="idea">Have you ever had an idea for a game, website, or app that
+                    you'd like to create?
+                    (Briefly explain)</label>
+                <textarea id="idea" type="text" name="idea"
+                    placeholder="i.e. e-commerce website, quest game, ordering app, etc..."></textarea>
             </div>
+
+            <h3 class="form-heading-2"> Additional Comments </h3>
+
+            <div class="message">
+                <label class="message-label" for="message">Is there anything else you'd like to share about yourself,
+                    your preferences,
+                    anything we should know about before the lesson? </label>
+                <textarea id="message" type="text" name="message"
+                    placeholder="Explain your goals and expectations from class along with any special accomodations if needed"></textarea>
+            </div>
+
+            <p class="more-question"> If you have any questions please contact us at <a href="mailto:info@beday.me">
+                    info@beday.me
+                </a></p>
+
             <div class="btn-section"><a href="#" class="primary-btn" onclick="runAll()"> Continue
                     to Payment </a></div>
         </form>
@@ -105,6 +157,47 @@
     </section>
 
     <script src="main.js"></script>
+    <script>
+        const radioDivs = document.querySelectorAll('.checkbox-div');
+        const radioInputs = document.querySelectorAll('.checkbox-input');
+
+        radioDivs.forEach((radioDiv, index) => {
+            radioDiv.addEventListener('click', function () {
+                radioInputs.forEach((input, i) => {
+                    if (i === index) {
+                        input.checked = true;
+                        radioDivs[i].classList.add('selected');
+
+                    } else {
+                        input.checked = false;
+                        radioDivs[i].classList.remove('selected');
+
+                    }
+                });
+            });
+        });
+
+
+
+        const newDivs = document.querySelectorAll('.checkbox-div-small');
+        const newInputs = document.querySelectorAll('.checkbox-input-small');
+
+        newDivs.forEach((radioDiv, index) => {
+            radioDiv.addEventListener('click', function () {
+                newInputs.forEach((input, i) => {
+                    if (i === index) {
+                        console.log('Checked')
+                        input.checked = true;
+                        newDivs[i].classList.add('selected');
+                    } else {
+                        input.checked = false;
+                        newDivs[i].classList.remove('selected');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

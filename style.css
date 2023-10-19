@@ -35,6 +35,86 @@ body {
    background: linear-gradient(to bottom, var(--primary), #d9d9d9, #fbfbfb);
 }
 
+.hobbies-interests{
+    margin-top: -50px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    
+}
+
+.checkbox-div {
+    flex: 1;
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid #000;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.checkbox-div-small {
+
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid #000;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+
+.checkbox-div:hover{
+    border: 1px solid var(--primary);
+}
+
+.checkbox-div-small:hover{
+    border: 1px solid var(--primary);
+}
+
+.more-question{
+    font-size: 14px;
+}
+
+/* Style for the checkbox div when checked */
+.checkbox-div.selected {
+    background-color: var(--hover);
+}
+
+.checkbox-div-small.selected {
+    background-color: var(--hover);
+}
+
+/* Hide the actual checkbox */
+.checkbox-input, .checkbox-input-small {
+    display: none;
+}
+
+.tookbefore-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: -20px;
+}
+
+.age-error {
+    color: red; /* Change the color of the error message if needed */
+    font-size: 14px; /* Change the font size as desired */
+    font-weight: 100;
+  }
+
+
 li {
     list-style: none;
 }
@@ -103,9 +183,10 @@ a {
     background-color: var(--white);
 
 }
+
 .sticky-navbar{
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -187,6 +268,38 @@ a {
   }
 
   @media only screen and (max-width: 768px) {
+
+    .hobbies-interests{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .checkbox-div {
+        width: 100px;
+        height: 100px;
+    }
+
+    .lower-row{
+        margin-top: -100px;
+        margin-bottom: -60px
+    }
+
+   
+    
+    .quality-card-container {
+        /* background-color: bisque; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        gap: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* overflow-x: scroll; */
+        margin-top: 30px;
+        /* overflow: hidden; */
+        scroll-behavior: smooth;
+        padding-bottom: 100px;
+    }
     /* NAVIGATION MENU */
     .nav-menu {
         /* position: fixed; */
@@ -247,8 +360,21 @@ a {
         transform: translateY(-6px) rotate(-45deg);
         color: var(--primary);
     }
+    .middle-card{
+        margin-right: 100px;
+    }
+    
+    
+    .slider-wrapper{
+        overflow: hidden;
+    }
+    
+    .first-card{
+        margin-right: 100px;
+    }
 
   }
+
 
 
   /******* FORM Responsiveness ***********/
@@ -274,7 +400,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
 }
@@ -288,6 +414,10 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.message-label{
+    margin-bottom: 10px;
 }
 
 .back-btn::after {
@@ -312,8 +442,18 @@ input{
     border: 1px solid #828282;
 }
 label{
-    font-size: 16px;
+    font-size: 14px;
     color: var(--paragraph);
+}
+
+.confidential{
+    font-size: 14px;
+}
+
+.form-heading-2{
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: -10px;
 }
 
 textarea{
@@ -590,7 +730,15 @@ select, option {
 .courses-txt {
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 50px;
+    margin-top: 120px;
+}
+
+.learn-more{
+    display: none;
+}
+
+.learn-more-text{
+    font-size: 14px;
 }
 
 .title {
@@ -742,6 +890,23 @@ select, option {
     padding-bottom: 100px;
 }
 
+.quality-card-container {
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    /* overflow-x: scroll; */
+    margin-top: 30px;
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+    padding-bottom: 100px;
+}
+
+
 .carousel-card {
     /* background-color: #6C68E3; */
     padding: 200px;
@@ -759,6 +924,23 @@ select, option {
     transition: all 0.3s ease;
 }
 
+
+.why-card, .firsst-card, .middle-card, .last-card {
+    /* background-color: #6C68E3; */
+    padding: 180px;
+    padding-bottom: 250px;
+    /* margin-left: 30px; */
+    /* background: linear-gradient(139.57deg, rgba(255, 255, 255, 0.4) 11.73%, rgba(255, 255, 255, 0.1) 88.47%); */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 60px;
+    position: relative;
+    /* border: 1px solid rgba(102, 100, 100, 0.6); */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 /* .carousel-card:hover {
     box-shadow: 2px 2px 2px 2px #9b9a9a;
 } */
@@ -774,6 +956,21 @@ select, option {
     left: 0;
     width: 600px;
     margin-left: 30px;
+}
+
+.why-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+    margin-top: 50px;
+    position: absolute;
+    top: 80;
+    left: 0;
+    width: 600px;
+    /* margin-left: 20%; */
 }
 
 .card-price {
@@ -801,6 +998,17 @@ select, option {
     opacity: 0.9;
 }
 
+.why-img {
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 250px;
+    opacity: 0.9;
+}
+
 .card-heading {
     display: block;
     left: 0;
@@ -808,6 +1016,24 @@ select, option {
     color: var(--paragraph);
     font-family: 'Secular One', sans-serif;
 }
+
+.why-heading {
+    display: block;
+    left: 70px;
+    margin-top: 33px;
+    position: absolute;
+    color: var(--paragraph);
+    font-family: 'Secular One', sans-serif;
+}
+
+/* .why-heading-2 {
+    display: block;
+    left: 120px;
+    margin-top: 33px;
+    position: absolute;
+    color: var(--paragraph);
+    font-family: 'Secular One', sans-serif;
+} */
 
 .card-paragraph {
     display: block;
@@ -817,6 +1043,18 @@ select, option {
     left: 0;
     margin-bottom: 100px;
     font-size: 16px;
+}
+
+.why-paragraph {
+    display: block;
+    position: absolute;
+    /* top: ; */
+    color: var(--paragraph);
+    left: 70px;
+    margin-bottom: 100px;
+    font-size: 16px;
+    max-width: 220px;
+    text-align: center;
 }
 
 .card-age {
@@ -863,7 +1101,7 @@ select, option {
 .instructor-txt {
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 
 
@@ -1312,37 +1550,97 @@ h4 {
     gap: 20px;
     justify-content: space-between;
     align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    margin-top: 30px;
+    padding-bottom: 100px;
+    position: relative;
+    scroll-behavior: smooth;
+    transition: transform 0.5s ease-in-out;
 }
+
+/*.slider-wrapper{
+    margin-right: 100px;
+    margin-left: 100px;
+}*/
+
+/* .slider-wrapper{
+    overflow: hidden;
+    position: relative;
+} */
 
 .quality-card{
     /* padding: 70px;
     padding-bottom: 30px; */
     /* background: linear-gradient(139.57deg, rgba(255, 255, 255, 0.4) 11.73%, rgba(255, 255, 255, 0.1) 88.47%); */
-    border-radius: 10px;
-    display: inline-block;
-    width: 340px;
-    height: 440px;
+    /* display: inline-block;
+    width: 320px;
+    height: 420px; */
     /* padding-top: 30px; */
-    padding-top: 30px;
-    position: relative;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-}
+    /* padding-top: 30px; */
 
-.card-details{
+    padding: 175px;
+    padding-bottom: 250px;
+    /* margin-left: 30px; */
+    /* background: linear-gradient(139.57deg, rgba(255, 255, 255, 0.4) 11.73%, rgba(255, 255, 255, 0.1) 88.47%); */
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 5px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 60px;
     position: relative;
     /* border: 1px solid rgba(102, 100, 100, 0.6); */
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    align-content: center;
-    align-items: center;
-    
+    flex: 1;
+  transition: transform 0.5s;
+  border: 0.2px solid #d9d9d9;
+  flex-shrink: 0; /* Add this */
+  width: 100%; /* Add this */
+  
 }
+
+
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 15px;
+    border-radius: 50%;
+    border-color: #D9D9D9;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .indicator.active {
+    background-color: var(--primary);
+  }
+
+  @media (min-width: 768px) {
+    .slide-indicators {
+      display: none;
+    }
+  }
+
+/*.card-details{*/
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    position: relative; */
+    /* border: 1px solid rgba(102, 100, 100, 0.6); */
+    /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-content: center;
+    align-items: center; */
+    
+/*}*/
 
 .quality-txt{
     margin-left: 100px;
@@ -1361,20 +1659,30 @@ h4 {
     
 }*/
 .services-img{
-    border-radius: 10px 10px 0px 0px;
+    /* border-radius: 10px 10px 0px 0px;
     position: absolute;
     display: block;
     top: -30px;
     left: 0;
-    width: 340px;
+    width: 320px;
     height: 270px;
     opacity: 0.9;
-    border-bottom: 0.5px solid #d9d9d9;
+    border-bottom: 0.5px solid #d9d9d9; */
+
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 364px;
+    height: 250px;
+    opacity: 0.9;
+
 
 }
 
 .services-img-2{
-    border-radius: 10px 10px 0px 0px;
+    /* border-radius: 10px 10px 0px 0px;
     position: absolute;
     display: block;
     top: -30px;
@@ -1385,19 +1693,58 @@ h4 {
     padding-left: 20px;
     border-bottom: 0.5px solid #d9d9d9;
     outline: 4px solid #fbfbfb;
-    outline-offset: -5px;
+    outline-offset: -5px; */
+
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 363px;
+    height: 250px;
+    opacity: 0.9;
 
 }
 
 
 .services-header{
-    display: block;
+    /* display: block;
     position: absolute;
     color: var(--heading);
     font-family: 'Secular One', sans-serif;
     top: 240px;
-    font-size: 20px;
+    font-size: 20px; */
+
+    display: inline-block;
+    left: 90px;
+    top: 260px;
+    position: absolute;
+    color: var(--paragraph);
+    font-family: 'Secular One', sans-serif;
+    align-items: center;
+
+    
 }
+
+.services-header-1{
+    /* display: block;
+    position: absolute;
+    color: var(--heading);
+    font-family: 'Secular One', sans-serif;
+    top: 240px;
+    font-size: 20px; */
+
+    display: inline-block;
+    left: 70px;
+    top: 260px;
+    position: absolute;
+    color: var(--paragraph);
+    font-family: 'Secular One', sans-serif;
+    align-items: center;
+
+    
+}
+
 
 /* .quality-card-img{
     padding-top: 100px;
@@ -1409,13 +1756,15 @@ h4 {
 .slogan{
     justify-content: center;
     display: inline-block; 
+    position: absolute;
     text-align: center;
     font-size: 14px;
     max-width: 220px;
     /* margin-top: -10px; */
     font-size: 16px;
-    top: 290px;
+    top: 300px;
     position: absolute;
+    left: 70px;
     /* border: 1px solid #6B6B6B;  */
 } 
 
@@ -1975,8 +2324,47 @@ h4 {
   }
 /**** Media Queries *****/
 @media only screen and (max-width: 768px) {
+    .quality-card-container {
+        /* background-color: bisque; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        gap: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* overflow-x: scroll; */
+        margin-top: 30px;
+        /* overflow: hidden; */
+        scroll-behavior: smooth;
+        padding-bottom: 100px;
+    }
+
+    .why-card{
+        margin-right: 20px;
+    }
+    .learn-more{
+        display:block;
+        margin-left: 40px;
+        margin-top: -20px;
+     }
+     .learn-more-text{
+         font-size: 14px;
+         color: black;
+     }
 
     /* NAVIGATION MENU */
+.quality-card{
+    padding: 155px;
+    padding-bottom: 250px;
+}
+
+    .slogan{
+        left: 50px;
+        font-size: 14px;
+    } 
+    
+
 
     .form-container{
         /* width: 100%; */
@@ -2075,17 +2463,26 @@ h4 {
         display: none;
     }
 
-}
-
-
-@media only screen and (max-width: 600px) {
     .scroll-top{
         display: none;
     }
 
+
+    .services-img{
+        width: 310px;
+    }
+
+    .services-img-2{
+        width: 310px;
+    }
+
+    .quality-txt{
+        margin-left: 20px;
+    }
+
     .questions{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     /* #sticky-button{
@@ -2147,8 +2544,8 @@ h4 {
     .hero{
         flex-wrap: wrap;
         /* margin-top: 50px; */
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
         justify-content: center;
         align-content: center;
         align-items: center;
@@ -2175,7 +2572,7 @@ h4 {
         flex-wrap: wrap;
         /* margin-left: -50px; */
         /* margin-left: 25px; */
-        margin-right: 40px;
+        margin-right: 20px;
         align-items: center;
         order: -1;
     }
@@ -2201,14 +2598,14 @@ h4 {
     }
 
     .courses-txt{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
         margin-top: 120px;
     }
 
     .carousel-card-container{
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-right: 20px;
+        margin-left: 20px;
         overflow-x: scroll;
     }
 
@@ -2217,14 +2614,15 @@ h4 {
     }
 
     .instructor-txt{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 150px;
     }
 
     .instructor-info{
         flex-wrap: wrap;
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
         gap: 50px;
         align-content: center;
         align-items: center;
@@ -2238,35 +2636,49 @@ h4 {
 
     .details{
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 65px;
+    }
+    .social{
+        margin-top: -15px;
+        margin-bottom: 25px;
     }
 
     .info-paragraph{
         margin-top: 0px;
         font-size: 16px;
     }
-
+/* 
     .quality-txt{
         margin-left: 40px;
         margin-right: 40px;
-    }
+    } */
 
     .beday-quality{
-        margin-left: 40px;
-        margin-right: 40px;
-        flex-wrap: wrap;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* flex-wrap: wrap; */
+        gap: 70px;
+        padding-bottom: 70px;
+    }
+
+    .card-1{
+        margin-left: 20px;
+    }
+
+    .card-2, .card-3{
+        margin-left: -15px;
     }
 
 
     .footer-container{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
         flex-wrap: wrap;
-        gap: 70px;
+        gap: 150px;
     }
 
     .contact-info{
-        margin-top: -30px;
+        margin-top: -90px;
     }
 
     .footer-logo{
@@ -2275,8 +2687,8 @@ h4 {
 
     .info{
         flex-wrap: wrap;
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .overview-new{
@@ -2285,12 +2697,12 @@ h4 {
     }
 
     #info-btn{
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .overview-title{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .info-paragraph-course{
@@ -2299,8 +2711,8 @@ h4 {
     }
 
     .suggestion{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .carousel-tabs-container-courses{
@@ -2355,7 +2767,7 @@ h4 {
 
     .btn-section{
         margin-top: 0;
-        margin-right: -60px;
+        margin-right: -20px;
     }
 
     .primary-btn, .secondary-btn{
@@ -2378,38 +2790,51 @@ h4 {
         font-size: 14px;
     }
 
-    .services-img{
-        width: 295px;
+    /* .services-img{
+        width: 340px;
     }
     .services-img-2{
-        width: 275px;
+        width: 320px;
     }
 
     .services-header{
         font-size: 18px;
-    }
+    } */
 
     .info-paragraph, .description-paragraph, .slogan{
         font-size: 14px;
     }
 
-    .quality-card{
+    /* .quality-card{
         height: 400px;
-    }
+    } */
 
     .sticky-header{
         position: sticky;
-        top: 10;
-        padding: 1rem 0.2rem;
-        padding-left: 40px;
-        padding-right: 80px;
+        top: 0;
+        /* padding: 2px 2px; */
+        /* padding-left: 20px; */
+        /* padding-right: 0px; */
         border-bottom: 0.5px solid #D9D9D9;
         z-index: 100;
         background-color: var(--white);
     
     }
+
+    .sticky-navbar{
+        position: sticky;
+        top: 0;
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        /* gap: -10px; */
+        
+      }
+
+ 
     .sticky-nav-logo{
         margin-bottom: 20px;
+        margin-left: -80px;
     }
 }
 
@@ -2420,8 +2845,8 @@ h4 {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .info{
         flex-wrap: wrap;
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .overview-new{
@@ -2433,12 +2858,12 @@ h4 {
 
     .info-paragraph-course{
         margin-left: 0px;
-        margin-right: 40px;
+        margin-right: 20px;
     }
 
     .suggestion, .carousel-card-container, .overview-title{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .carousel-tabs-container-courses{
@@ -2449,12 +2874,12 @@ h4 {
         overflow-x: scroll;
     }
 
-    .footer-container{
-        margin-left: 40px;
-        margin-right: 40px;
+    /* .footer-container{
+        margin-left: 20px;
+        margin-right: 20px;
         flex-wrap: wrap;
         gap: 100px;
-    }
+    } */
 
     footer{
         margin-top: 50px;

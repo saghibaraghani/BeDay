@@ -326,10 +326,10 @@ function SubForm() {
         type: 'post',
         data: $("#myForm").serializeArray(),
         success: function () {
-            alert("Form Data Submitted :)")
+            alert("Form Data Submitted. Yaaay! :)")
         },
         error: function () {
-            alert("There was an error :(")
+            alert("Oops! Please resubmit your form again!")
         }
     });
 }
@@ -349,13 +349,16 @@ function validateEmail() {
     if (emailRegex.test(email)) {
         validationMessage.textContent = "Valid email address";
         validationMessage.style.color = "green";
+        validationMessage.style.fontSize = "14px";
         SubForm();
         setTimeout(openPage, 1500);
     } else {
         validationMessage.textContent = "Invalid email address";
         validationMessage.style.color = "red";
+        validationMessage.style.fontSize = "14px";
     }
 }
+
 
 
 
@@ -363,22 +366,102 @@ function runAll() {
 
     // openPage();
     validateEmail();
-}
+    var courseSelect = document.getElementById("course");
+    var errorMessage = document.getElementById("error-message");
+    var ageInput = document.getElementById("age");
+    var ageMessage = document.getElementById("ageMessage");
+    var ageValue = parseInt(ageInput.value, 10);
 
-function getValue() {
-    var dropdown = document.getElementById("tookbefore");
-    var selectedValue = dropdown.value;
-    var projectText = document.getElementById("projects");
-    console.log(selectedValue);
-    if (selectedValue === "yes") {
-        projectText.style.display = 'flex';
-        projectText.style.flexDirection = 'column';
-        projectText.style.justifyContent = 'flex-start';
+    if (isNaN(ageValue) || ageValue < 0 || ageValue > 60) {
+        ageMessage.textContent = "Please enter a valid age between 0 and 60.";
     } else {
-        projectText.style.display = 'none';
+        ageMessage.textContent = "";
     }
 
+
+    if (courseSelect.value === "") {
+        errorMessage.textContent = "Please select a subject.";
+        return false; // Prevent the "Continue to Payment" link from proceeding
+    } else {
+        errorMessage.textContent = ""; // Clear error message
+        return true; // Allow the "Continue to Payment" link to proceed
+    }
+
+
 }
+
+// function getValue() {
+//     var dropdown = document.getElementById("tookbefore");
+//     var selectedValue = dropdown.value;
+//     var projectText = document.getElementById("projects");
+//     console.log(selectedValue);
+//     if (selectedValue === "yes") {
+//         projectText.style.display = 'flex';
+//         projectText.style.flexDirection = 'column';
+//         projectText.style.justifyContent = 'flex-start';
+//     } else {
+//         projectText.style.display = 'none';
+//     }
+
+// }
+
+
+
+
+
+
+const slideshowContainer = document.querySelector(".quality-card-container");
+const slidesShowSlide = document.querySelectorAll(".why-card");
+const indicators = document.querySelectorAll(".indicator");
+let currentSlide = 0;
+
+function showSlide(slideIndex) {
+    if (slideIndex < 0) {
+        slideIndex = slidesShowSlide.length - 1;
+    } else if (slideIndex >= slidesShowSlide.length) {
+        slideIndex = 0;
+    }
+
+    slideshowContainer.style.transform = `translateX(-${slideIndex * 108}%)`;
+    currentSlide = slideIndex;
+
+    // Update active indicator
+    indicators.forEach((indicator, index) => {
+        if (index === slideIndex) {
+            indicator.classList.add("active");
+        } else {
+            indicator.classList.remove("active");
+        }
+    });
+}
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 3000);
+
+    // Attach click event listeners to indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+            showSlide(index);
+        });
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
