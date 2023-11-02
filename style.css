@@ -29,6 +29,15 @@ body {
     position: relative;
 }
 
+.footer-reserved{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
 
 .form-background{
     
@@ -2676,6 +2685,8 @@ h4 {
         flex-wrap: wrap;
         gap: 150px;
     }
+
+    
 
     .contact-info{
         margin-top: -90px;
